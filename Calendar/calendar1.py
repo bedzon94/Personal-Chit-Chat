@@ -1,4 +1,6 @@
-#!/usr/bin/python
-
+#!/usr/bin/env python3
 import calendar
-print(calendar)
+
+calendar.setfirstweekday(calendar.SUNDAY)
+x = calendar.TextCalendar()
+print(x.pryear(2022))
