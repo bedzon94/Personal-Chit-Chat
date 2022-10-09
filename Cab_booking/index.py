@@ -259,9 +259,9 @@ class travel:
                 self.txtReceipt1.insert(END,'Standard:\n')
                 self.txtReceipt2.insert(END, Standard.get() + "\n")
                 self.txtReceipt1.insert(END,'Prime Sedan:\n')
-                self.txtReceipt2.insert(END, FordGalaxy.get() + "\n")
+                self.txtReceipt2.insert(END, ToyotaCorolla.get() + "\n")
                 self.txtReceipt1.insert(END,'Premium Sedan:\n')
-                self.txtReceipt2.insert(END, FordMondeo.get() + "\n")
+                self.txtReceipt2.insert(END, ToyotaVitz.get() + "\n")
                 self.txtReceipt1.insert(END,'Paid:\n')
                 self.txtReceipt2.insert(END, PaidTax.get() + "\n")
                 self.txtReceipt1.insert(END,'SubTotal:\n')
@@ -280,7 +280,7 @@ class travel:
             if var1.get() == 1:
                 self.txtCabTax.configure(state = NORMAL)
                 Item1=float(50)
-                CabTax.set("Rs " + str(Item1))
+                CabTax.set("GHS " + str(Item1))
             elif var1.get() == 0:
                 self.txtCabTax.configure(state=DISABLED)
                 CabTax.set("0")
@@ -293,17 +293,17 @@ class travel:
                 Km.set("0")
             elif var2.get() == 1 and varl1.get() != "" and varl2.get() != "":
                 self.txtKm.configure(state=NORMAL)
-                if varl1.get() == "BleckerStreet":
-                    switch ={"BrownAvenue": 10,"NorthAvenue": 8,"BoggessStreet":6,"BleckerStreet": 0}
+                if varl1.get() == "KaneshieMarket":
+                    switch ={"TemaStation": 10,"NorthAvenue": 8,"Kantamanto":6,"KaneshieMarket": 0}
                     Km.set(switch[varl2.get()])
-                elif varl1.get() == "BrownAvenue":
-                    switch ={"BrownAvenue": 0,"NorthAvenue": 2,"BoggessStreet":5,"BleckerStreet": 10}
+                elif varl1.get() == "TemaStation":
+                    switch ={"TemaStation": 0,"NorthAvenue": 2,"Kantamanto":5,"KaneshieMarket": 10}
                     Km.set(switch[varl2.get()])
-                elif varl1.get() == "NorthAvenue":
-                    switch ={"BrownAvenue": 2,"NorthAvenue": 0,"BoggessStreet":3,"BleckerStreet": 8}
+                elif varl1.get() == "MakolaMarket":
+                    switch ={"TemaStation": 2,"MakolaMarket": 0,"Kantamanto":3,"KaneshieMarket": 8}
                     Km.set(switch[varl2.get()])
-                elif varl1.get() == "BoggessStreet":
-                    switch ={"BrownAvenue": 5,"NorthAvenue": 3,"BoggessStreet":0,"BleckerStreet": 6}
+                elif varl1.get() == "Kantamanto":
+                    switch ={"TemaStation": 5,"MakolaMarket": 3,"Kantamanto":0,"KaneshieMarket": 6}
                     Km.set(switch[varl2.get()])        
 
         
@@ -334,29 +334,29 @@ class travel:
         def selectCar():
             global Item5
             if carType.get() == 1:
-                self.txtFordGalaxy.configure(state = DISABLED)
-                FordGalaxy.set("0") 
-                self.txtFordMondeo.configure(state = DISABLED)
-                FordMondeo.set("0")
+                self.txtToyotaCorolla.configure(state = DISABLED)
+                ToyotaCorolla.set("0") 
+                self.txtToyotaCorolla.configure(state = DISABLED)
+                ToyotaCorolla.set("0")
                 self.txtStandard.configure(state = NORMAL)
                 Item5 = float(8)
-                Standard.set("Rs "+ str(Item5))
+                Standard.set("GHS "+ str(Item5))
             elif carType.get() == 2:
                 self.txtStandard.configure(state =DISABLED)
                 Standard.set("0")
-                self.txtFordMondeo.configure(state = DISABLED)
-                FordMondeo.set("0")
-                self.txtFordGalaxy.configure(state = NORMAL)
+                self.txtToyotaVitz.configure(state = DISABLED)
+                ToyotaVitz.set("0")
+                self.txtToyotaCorolla.configure(state = NORMAL)
                 Item5 = float(15)
-                FordGalaxy.set("Rs "+ str(Item5))
+                ToyotaCorolla.set("GHS "+ str(Item5))
             else:
                 self.txtStandard.configure(state =DISABLED)
                 Standard.set("0")
-                self.txtFordGalaxy.configure(state = DISABLED)
-                FordGalaxy.set("0")
-                self.txtFordMondeo.configure(state = NORMAL)
+                self.txtToyotaCorolla.configure(state = DISABLED)
+                ToyotaCorolla.set("0")
+                self.txtToyotaVitz.configure(state = NORMAL)
                 Item5 = float(22)
-                FordMondeo.set("Rs "+ str(Item5))
+                ToyotaVitz.set("GHS "+ str(Item5))
                 
                        
         def Total_Paid():
@@ -365,23 +365,23 @@ class travel:
                     Item2=Km.get()
                     Cost_of_fare = (Item1+(float(Item2)*Item5)+Item3+Item4)
 
-                    Tax = "Rs " + str('%.2f'%((Cost_of_fare) *0.09))
-                    ST = "Rs " + str('%.2f'%((Cost_of_fare)))
-                    TT = "Rs " + str('%.2f'%(Cost_of_fare+((Cost_of_fare)*0.9)))
+                    Tax = "GHS " + str('%.2f'%((Cost_of_fare) *0.09))
+                    ST = "GHS " + str('%.2f'%((Cost_of_fare)))
+                    TT = "GHS " + str('%.2f'%(Cost_of_fare+((Cost_of_fare)*0.9)))
                 elif journeyType.get()==2:
                     Item2=Km.get()
                     Cost_of_fare = (Item1+(float(Item2)*Item5)*1.5+Item3+Item4)
 
-                    Tax = "Rs " + str('%.2f'%((Cost_of_fare) *0.09))
-                    ST = "Rs " + str('%.2f'%((Cost_of_fare)))
-                    TT = "Rs " + str('%.2f'%(Cost_of_fare+((Cost_of_fare)*0.9)))
+                    Tax = "GHS " + str('%.2f'%((Cost_of_fare) *0.09))
+                    ST = "GHS " + str('%.2f'%((Cost_of_fare)))
+                    TT = "GHS " + str('%.2f'%(Cost_of_fare+((Cost_of_fare)*0.9)))
                 else:
                     Item2=Km.get()
                     Cost_of_fare = (Item1+(float(Item2)*Item5)*2+Item3+Item4)
 
-                    Tax = "Rs " + str('%.2f'%((Cost_of_fare) *0.09))
-                    ST = "Rs " + str('%.2f'%((Cost_of_fare)))
-                    TT = "Rs " + str('%.2f'%(Cost_of_fare+((Cost_of_fare)*0.9)))
+                    Tax = "GHS " + str('%.2f'%((Cost_of_fare) *0.09))
+                    ST = "GHS " + str('%.2f'%((Cost_of_fare)))
+                    TT = "GHS " + str('%.2f'%(Cost_of_fare+((Cost_of_fare)*0.9)))
 
                 PaidTax.set(Tax)
                 SubTotal.set(ST)
@@ -478,7 +478,7 @@ class travel:
         self.lblPickup.grid(row=0,column=0,sticky=W)
 
         self.cboPickup =ttk.Combobox(TravelFrame, textvariable = varl1 , state='readonly', font=('arial',20,'bold'), width=14)
-        self.cboPickup['value']=('','BleckerStreet','BoggessStreet','NorthAvenue','BrownAvenue')
+        self.cboPickup['value']=('','KaneshieMarket','Kantamanto','MakolaMarket','TemaStation')
         self.cboPickup.current(0)
         self.cboPickup.grid(row=0,column=1)
 
@@ -487,7 +487,7 @@ class travel:
         self.lblDrop.grid(row=1,column=0,sticky=W)
 
         self.cboDrop =ttk.Combobox(TravelFrame, textvariable = varl2 , state='readonly', font=('arial',20,'bold'), width=14)
-        self.cboDrop['value']=('','BrownAvenue','NorthAvenue','BleckerStreet','BoggessStreet')
+        self.cboDrop['value']=('','TemaStation','MakolaMarket','KaneshieMarket','Kantamanto')
         self.cboDrop.current(0)
         self.cboDrop.grid(row=1,column=1)
 
@@ -547,14 +547,14 @@ class travel:
         self.txtStandard.grid(row=0,column=1)
         
 
-        self.chkFordGalaxyd=Radiobutton(Book_Frame,text="Ford Galaxy Cab",value=2,variable = carType,font=('arial',14,'bold'),command=selectCar).grid(row=1, column=0, sticky=W)
-        self.txtFordGalaxy= Label(Book_Frame,font=('arial',14,'bold'),width =7,textvariable=FordGalaxy,bd=5, state= DISABLED, justify=RIGHT,bg="white",relief=SUNKEN)
-        self.txtFordGalaxy.grid(row=1,column=1)
+        self.chkToyotaCorolla=Radiobutton(Book_Frame,text="Toyota Corolla Cab",value=2,variable = carType,font=('arial',14,'bold'),command=selectCar).grid(row=1, column=0, sticky=W)
+        self.txtToyotaCorolla= Label(Book_Frame,font=('arial',14,'bold'),width =7,textvariable=ToyotaCorolla,bd=5, state= DISABLED, justify=RIGHT,bg="white",relief=SUNKEN)
+        self.txtToyotaCorolla.grid(row=1,column=1)
              
        
-        self.chkFordMondeo = Radiobutton(Book_Frame,text="Ford Mondeo Cab",value=3,variable = carType,font=('arial',14,'bold'),command=selectCar).grid(row=2, column=0)
-        self.txtFordMondeo = Label(Book_Frame,font=('arial',14,'bold'),width =7,textvariable=FordMondeo,bd=5, state= DISABLED, justify=RIGHT,bg="white",relief=SUNKEN)
-        self.txtFordMondeo.grid(row=2,column=1)
+        self.chkToyotaVitz = Radiobutton(Book_Frame,text="Toyota Vitz Cab",value=3,variable = carType,font=('arial',14,'bold'),command=selectCar).grid(row=2, column=0)
+        self.txtToyotaVitz = Label(Book_Frame,font=('arial',14,'bold'),width =7,textvariable=ToyotaVitz,bd=5, state= DISABLED, justify=RIGHT,bg="white",relief=SUNKEN)
+        self.txtToyotaVitz.grid(row=2,column=1)
 
         self.chkSingle =Radiobutton(Book_Frame,text="Single",value=1,variable = journeyType,font=('arial',14,'bold')).grid(row=0, column=2, sticky=W)
         self.chkReturn =Radiobutton(Book_Frame,text="Return",value=2,variable = journeyType,font=('arial',14,'bold')).grid(row=1, column=2, sticky=W)
