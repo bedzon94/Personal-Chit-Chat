@@ -181,8 +181,8 @@ class travel:
             Luggage.set("0")
 
             Standard.set("0")
-            FordGalaxy.set("0")
-            FordMondeo.set("0")
+            ToyotaCorolla.set("0")
+            ToyotaVitz.set("0")
 
             Firstname.set("")
             Surname.set("")
@@ -218,8 +218,8 @@ class travel:
             self.txtLuggage.configure(state=DISABLED)
         
             self.txtStandard.configure(state=DISABLED)
-            self.txtFordGalaxy.configure(state=DISABLED)
-            self.txtFordMondeo.configure(state=DISABLED)
+            self.txtToyotaCorolla.configure(state=DISABLED)
+            self.txtToyotaVitz.configure(state=DISABLED)
             self.reset_counter=1
 
         def Receiptt():
@@ -312,7 +312,7 @@ class travel:
             if var3.get() == 1:
                 self.txtTravel_Ins.configure(state = NORMAL)
                 Item3=float(10)
-                Travel_Ins.set("Rs " + str(Item3))
+                Travel_Ins.set("GHS " + str(Item3))
             elif var3.get() == 0:
                 self.txtTravel_Ins.configure(state = DISABLED)
                 Travel_Ins.set("0")
@@ -324,7 +324,7 @@ class travel:
             if (var4.get()==1):
                 self.txtLuggage.configure(state = NORMAL)
                 Item4=float(30)
-                Luggage.set("Rs "+ str(Item4))
+                Luggage.set("GHS "+ str(Item4))
             elif var4.get()== 0:
                 self.txtLuggage.configure(state = DISABLED)
                 Luggage.set("0")
