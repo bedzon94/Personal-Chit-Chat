@@ -148,8 +148,8 @@ class travel:
 
 
         Standard=StringVar()
-        FordGalaxy=StringVar()
-        FordMondeo=StringVar()
+        ToyotaCorolla=StringVar()
+        ToyotaVitz=StringVar()
 
 
         CabTax.set("0")
@@ -159,8 +159,8 @@ class travel:
 
 
         Standard.set("0")
-        FordGalaxy.set("0")
-        FordMondeo.set("0")
+        ToyotaCorolla.set("0")
+        ToyotaVitz.set("0")
 
        
         
